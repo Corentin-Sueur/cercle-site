@@ -1,0 +1,1 @@
+import{a as e,i as t,r as n}from"./styles-CAqortqO.js";function r(e){return e.includes(`=`)?`./explorer.html${e}`:null}async function i(){let i=r(location.hash);if(i){location.replace(i);return}t();let a=await n();for(let t of document.querySelectorAll(`[data-total]`))t.textContent=e(a[t.dataset.total??``]??0)}i();

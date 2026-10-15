@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Cercle</title>
+<meta name="description" content="Qui a travaillé avec qui dans les cabinets ministériels, à l'Élysée, à Matignon et aux conseils d'administration publics, d'après les nominations du Journal officiel depuis 1990.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Le Cercle">
+<meta property="og:title" content="Le Cercle">
+<meta property="og:description" content="Qui a travaillé avec qui dans les cabinets ministériels, à l'Élysée, à Matignon et aux conseils d'administration publics, d'après les nominations du Journal officiel depuis 1990.">
+<meta property="og:url" content="https://cercle.corentinsueur.com/explorer.html">
+<meta property="og:image" content="https://cercle.corentinsueur.com/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='9' cy='11' r='5' fill='%232a78d6'/%3E%3Ccircle cx='23' cy='9' r='4' fill='%23eb6834'/%3E%3Ccircle cx='17' cy='23' r='6' fill='%238a5cd6'/%3E%3Cpath d='M9 11L23 9L17 23Z' fill='none' stroke='%2316181c' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="alternate" hreflang="fr" href="https://cercle.corentinsueur.com/explorer.html">
+<link rel="alternate" hreflang="en" href="https://cercle.corentinsueur.com/en/explorer.html">
+<link rel="alternate" hreflang="x-default" href="https://cercle.corentinsueur.com/explorer.html">
+  <script type="module" crossorigin src="./assets/styles-CAqortqO.js"></script>
+  <script type="module" crossorigin src="./assets/company-DQdMC2Ev.js"></script>
+  <script type="module" crossorigin src="./assets/url-DlRJpd6G.js"></script>
+  <script type="module" crossorigin src="./assets/main-B9Wzdq1t.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/styles-d2u9mi1c.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="./">
+      <div class="mark" aria-hidden="true"></div>
+      <div>
+        <div class="title">Le Cercle</div>
+        <div class="subtitle">Qui a travaillé avec qui au sommet de l'État</div>
+      </div>
+    </a>
+    <div class="search" role="search">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="search" type="search" autocomplete="off" spellcheck="false" placeholder="Chercher une personne, un cabinet ou un conseil" aria-label="Chercher une personne, un cabinet ou un conseil" aria-controls="results" aria-expanded="false" disabled>
+      <kbd>/</kbd>
+      <div id="results" class="results" role="listbox" hidden></div>
+    </div>
+    <nav class="pages" aria-label="Pages">
+      <a href="./explorer.html" aria-current="page">Explorateur</a>
+      <a href="./profile.html">Profils</a>
+      <a href="./leads.html">Pistes</a>
+      <a href="./money.html">Argent public</a>
+      <a href="./facts.html">Chiffres et sources</a>
+      <a href="./about.html">À propos</a>
+    </nav>
+    <div class="topbar-end">
+      <a class="lang-switch" data-lang-switch href="./en/explorer.html" hreflang="en" lang="en">English</a>
+      <button type="button" class="button" id="toggle-filters" aria-controls="filters" aria-expanded="false">Filtres</button>
+      <span class="muted small" id="data-date"></span>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="filters" aria-label="Filtres">
+    <section>
+      <h2>Disposition</h2>
+      <div class="segmented" role="radiogroup" aria-label="Disposition">
+        <button type="button" role="radio" data-layout="bodies">Organismes</button>
+        <button type="button" role="radio" data-layout="people">Personnes</button>
+      </div>
+      <p class="hint" id="layout-hint"></p>
+    </section>
+    <section>
+      <h2>Cabinets et conseils</h2>
+      <label class="check"><input type="checkbox" data-kind="e"><span class="swatch" style="background:var(--elysee)"></span>Élysée</label>
+      <label class="check"><input type="checkbox" data-kind="m"><span class="swatch" style="background:var(--matignon)"></span>Matignon</label>
+      <label class="check"><input type="checkbox" data-kind="i"><span class="swatch" style="background:var(--ministry)"></span>Cabinets ministériels</label>
+      <label class="check"><input type="checkbox" data-kind="b"><span class="swatch" style="background:var(--board)"></span>Conseils d'administration</label>
+      <label class="check"><input type="checkbox" data-kind="c"><span class="swatch" style="background:var(--org)"></span>Organisations</label>
+    </section>
+    <section>
+      <h2>Période <output id="period-label" class="value"></output></h2>
+      <div class="range">
+        <label><span class="sr">De</span><input type="range" id="from-year" step="1"></label>
+        <label><span class="sr">À</span><input type="range" id="to-year" step="1"></label>
+      </div>
+    </section>
+    <section>
+      <h2>Passages ensemble</h2>
+      <div class="segmented" role="radiogroup" aria-label="Nombre minimal de passages distincts ensemble">
+        <button type="button" role="radio" data-stints="1">1 ou plus</button>
+        <button type="button" role="radio" data-stints="2">2 ou plus</button>
+        <button type="button" role="radio" data-stints="3">3 ou plus</button>
+      </div>
+      <p class="hint">S'applique aux liens entre personnes. Un passage est une période distincte au même endroit ; suivre son ministre de cabinet en cabinet en compte plusieurs.</p>
+    </section>
+    <section>
+      <h2>Personnes</h2>
+      <label class="check"><input type="checkbox" id="board-only">Personnes connues seulement par un conseil d'administration</label>
+      <label class="check"><input type="checkbox" id="parliament-only">Personnes connues seulement par le Parlement</label>
+      <label class="check"><input type="checkbox" id="company-only">Personnes connues seulement par un conseil d'entreprise</label>
+      <label class="check"><input type="checkbox" id="local-only">Exécutifs locaux connus par leur déclaration à la HATVP</label>
+      <label class="check"><input type="checkbox" id="uncertain">Noms avec homonymes possibles</label>
+      <label class="check"><input type="checkbox" id="movers">Seulement les personnes parties en entreprise</label>
+    </section>
+    <section class="graph-summary">
+      <p id="graph-stats" class="muted small"></p>
+      <div class="actions">
+        <button type="button" class="button" id="reset-filters">Réinitialiser</button>
+        <button type="button" class="button" id="clear-graph">Vider le graphe</button>
+        <button type="button" class="button" id="export-graph">Télécharger le CSV</button>
+      </div>
+    </section>
+  </aside>
+
+  <main class="stage" id="stage">
+    <svg id="graph" role="img" aria-label="Graphe du réseau"></svg>
+    <div class="overlay" id="overlay">
+      <div class="overlay-card" id="overlay-card">Chargement du réseau…</div>
+    </div>
+    <div class="zoom" role="group" aria-label="Zoom">
+      <button type="button" class="icon-button" id="zoom-in" aria-label="Zoom avant"><svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></button>
+      <button type="button" class="icon-button" id="zoom-out" aria-label="Zoom arrière"><svg viewBox="0 0 16 16"><path d="M3 8h10"/></svg></button>
+      <button type="button" class="icon-button" id="zoom-fit" aria-label="Ajuster à l'écran"><svg viewBox="0 0 16 16"><path d="M2.5 6V2.5H6M13.5 10v3.5H10M2.5 10v3.5H6M13.5 6V2.5H10"/></svg></button>
+    </div>
+    <div class="legend" id="legend"></div>
+  </main>
+
+  <aside class="panel" id="panel" aria-live="polite"></aside>
+</div>
+</body>
+</html>

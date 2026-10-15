@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Cercle</title>
+<meta name="description" content="Who worked with whom in French ministers' offices, the Élysée, Matignon and state boards, from Journal officiel appointments since 1990.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Le Cercle">
+<meta property="og:title" content="Le Cercle">
+<meta property="og:description" content="Who worked with whom in French ministers' offices, the Élysée, Matignon and state boards, from Journal officiel appointments since 1990.">
+<meta property="og:url" content="https://cercle.corentinsueur.com/en/explorer.html">
+<meta property="og:image" content="https://cercle.corentinsueur.com/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='9' cy='11' r='5' fill='%232a78d6'/%3E%3Ccircle cx='23' cy='9' r='4' fill='%23eb6834'/%3E%3Ccircle cx='17' cy='23' r='6' fill='%238a5cd6'/%3E%3Cpath d='M9 11L23 9L17 23Z' fill='none' stroke='%2316181c' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="alternate" hreflang="fr" href="https://cercle.corentinsueur.com/explorer.html">
+<link rel="alternate" hreflang="en" href="https://cercle.corentinsueur.com/en/explorer.html">
+<link rel="alternate" hreflang="x-default" href="https://cercle.corentinsueur.com/explorer.html">
+  <script type="module" crossorigin src="../assets/styles-CAqortqO.js"></script>
+  <script type="module" crossorigin src="../assets/company-DQdMC2Ev.js"></script>
+  <script type="module" crossorigin src="../assets/url-DlRJpd6G.js"></script>
+  <script type="module" crossorigin src="../assets/main-B9Wzdq1t.js"></script>
+  <link rel="stylesheet" crossorigin href="../assets/styles-d2u9mi1c.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="./">
+      <div class="mark" aria-hidden="true"></div>
+      <div>
+        <div class="title">Le Cercle</div>
+        <div class="subtitle">Who worked with whom at the top of the French state</div>
+      </div>
+    </a>
+    <div class="search" role="search">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="search" type="search" autocomplete="off" spellcheck="false" placeholder="Search a person, an office or a board" aria-label="Search a person, an office or a board" aria-controls="results" aria-expanded="false" disabled>
+      <kbd>/</kbd>
+      <div id="results" class="results" role="listbox" hidden></div>
+    </div>
+    <nav class="pages" aria-label="Pages">
+      <a href="./explorer.html" aria-current="page">Explorer</a>
+      <a href="./profile.html">Profiles</a>
+      <a href="./leads.html">Leads</a>
+      <a href="./money.html">Public money</a>
+      <a href="./facts.html">Facts and sources</a>
+      <a href="./about.html">About</a>
+    </nav>
+    <div class="topbar-end">
+      <a class="lang-switch" data-lang-switch href="../explorer.html" hreflang="fr" lang="fr">Français</a>
+      <button type="button" class="button" id="toggle-filters" aria-controls="filters" aria-expanded="false">Filters</button>
+      <span class="muted small" id="data-date"></span>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="filters" aria-label="Filters">
+    <section>
+      <h2>Layout</h2>
+      <div class="segmented" role="radiogroup" aria-label="Layout">
+        <button type="button" role="radio" data-layout="bodies">People and bodies</button>
+        <button type="button" role="radio" data-layout="people">People only</button>
+      </div>
+      <p class="hint" id="layout-hint"></p>
+    </section>
+    <section>
+      <h2>Offices and boards</h2>
+      <label class="check"><input type="checkbox" data-kind="e"><span class="swatch" style="background:var(--elysee)"></span>Élysée</label>
+      <label class="check"><input type="checkbox" data-kind="m"><span class="swatch" style="background:var(--matignon)"></span>Matignon</label>
+      <label class="check"><input type="checkbox" data-kind="i"><span class="swatch" style="background:var(--ministry)"></span>Ministers' offices</label>
+      <label class="check"><input type="checkbox" data-kind="b"><span class="swatch" style="background:var(--board)"></span>State boards</label>
+      <label class="check"><input type="checkbox" data-kind="c"><span class="swatch" style="background:var(--org)"></span>Organisations</label>
+    </section>
+    <section>
+      <h2>Period <output id="period-label" class="value"></output></h2>
+      <div class="range">
+        <label><span class="sr">From</span><input type="range" id="from-year" step="1"></label>
+        <label><span class="sr">To</span><input type="range" id="to-year" step="1"></label>
+      </div>
+    </section>
+    <section>
+      <h2>Worked together</h2>
+      <div class="segmented" role="radiogroup" aria-label="Minimum separate stints together">
+        <button type="button" role="radio" data-stints="1">Once or more</button>
+        <button type="button" role="radio" data-stints="2">2+ stints</button>
+        <button type="button" role="radio" data-stints="3">3+ stints</button>
+      </div>
+      <p class="hint">Applies to links between people. A stint is a separate period in the same place; moving together from office to office counts several.</p>
+    </section>
+    <section>
+      <h2>People</h2>
+      <label class="check"><input type="checkbox" id="board-only">People known only from state boards</label>
+      <label class="check"><input type="checkbox" id="parliament-only">People known only from Parliament</label>
+      <label class="check"><input type="checkbox" id="company-only">People known only from company boards</label>
+      <label class="check"><input type="checkbox" id="local-only">Local executives known from their HATVP declaration</label>
+      <label class="check"><input type="checkbox" id="uncertain">Names with possible homonyms</label>
+      <label class="check"><input type="checkbox" id="movers">Only people who moved to a company</label>
+    </section>
+    <section class="graph-summary">
+      <p id="graph-stats" class="muted small"></p>
+      <div class="actions">
+        <button type="button" class="button" id="reset-filters">Reset filters</button>
+        <button type="button" class="button" id="clear-graph">Clear graph</button>
+        <button type="button" class="button" id="export-graph">Download CSV</button>
+      </div>
+    </section>
+  </aside>
+
+  <main class="stage" id="stage">
+    <svg id="graph" role="img" aria-label="Network graph"></svg>
+    <div class="overlay" id="overlay">
+      <div class="overlay-card" id="overlay-card">Loading the network…</div>
+    </div>
+    <div class="zoom" role="group" aria-label="Zoom">
+      <button type="button" class="icon-button" id="zoom-in" aria-label="Zoom in"><svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></button>
+      <button type="button" class="icon-button" id="zoom-out" aria-label="Zoom out"><svg viewBox="0 0 16 16"><path d="M3 8h10"/></svg></button>
+      <button type="button" class="icon-button" id="zoom-fit" aria-label="Fit to screen"><svg viewBox="0 0 16 16"><path d="M2.5 6V2.5H6M13.5 10v3.5H10M2.5 10v3.5H6M13.5 6V2.5H10"/></svg></button>
+    </div>
+    <div class="legend" id="legend"></div>
+  </main>
+
+  <aside class="panel" id="panel" aria-live="polite"></aside>
+</div>
+</body>
+</html>
